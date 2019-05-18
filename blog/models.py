@@ -1,5 +1,4 @@
 from django.db import models
-from django_markdown.models import MarkdownField
 from django.urls import reverse
 
 class PostQuerySet(models.QuerySet):

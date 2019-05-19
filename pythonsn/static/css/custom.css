@@ -1,11 +1,6 @@
 /* css genral rules */
 body {
-  background: #333;
-  color: #fff;
-}
-
-.btn-secondary {
-  color: #fff !important;
+  background-color: rgba(0, 0, 0, .05);
 }
 
 img {
@@ -27,6 +22,10 @@ img {
 }
 
 .navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
+#home-section {
   color: #fff;
 }
 
@@ -69,12 +68,24 @@ img {
 }
 
 
+/* posts */
+.posts {
+  box-shadow: 0 2px 4px rgba(3, 27, 78, .1);
+  background: #fff;
+}
+
 
 /* Framework */
 .special-text {
   color: #ffde57;
   font-weight: bold;
 }
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
 
 /* Mobile */
 

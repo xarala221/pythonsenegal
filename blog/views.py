@@ -7,7 +7,7 @@ def blog_index(request):
     context = {
         "posts": posts,
     }
-    return render(request, "blog_index.html", context)
+    return render(request, "blog/all_posts.html", context)
 
 def blog_category(request, category):
     posts = Post.objects.filter(
@@ -19,7 +19,7 @@ def blog_category(request, category):
         "category": category,
         "posts": posts
     }
-    return render(request, "blog_category.html", context)
+    return render(request, "blog/post_category.html", context)
 
 def blog_detail(request, pk):
     post = Post.objects.get(pk=pk)
@@ -41,4 +41,4 @@ def blog_detail(request, pk):
         "comments": comments,
         "form": CommentForm(),
     }
-    return render(request, "post_detail.html", context)
+    return render(request, "blog/post_detail.html", context)

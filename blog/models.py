@@ -1,27 +1,22 @@
 from django.db import models
-from django.urls import reverse
 
-class PostQuerySet(models.QuerySet):
-	def publié(self):
-		return self.filter(publier=True)
+class Category(models.Model):
+    name = models.CharField(max_length=20)
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
-	titre = models.CharField(max_length=200)
-	contenue = models.TextField()
-	slug = models.SlugField(max_length=250, unique=True)
-	publier = models.BooleanField(default=True)
-	créé = models.DateTimeField(auto_now_add=True)
-	modifié = models.DateTimeField(auto_now=True)
+    title = models.CharField(max_length=255)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
+    categories = models.ManyToManyField('Category', related_name='posts')
 
-	objects = PostQuerySet.as_manager()
+    def __str__(self):
+        return self.title
 
-	def __str__(self):
-		return self.titre
-
-	def get_absolute_url(self):
-		return reverse('post-detail', kwargs={"slug":self.slug})
-
-
-	verbose_name='post'
-	verbose_name_plural = 'posts'
-	ordering = ["-créé"]
+class Comment(models.Model):
+    author = models.CharField(max_length=60)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    post = models.ForeignKey('Post', on_delete=models.CASCADE)

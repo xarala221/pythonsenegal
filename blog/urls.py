@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import PostIndex, PostDetail
+from . import views
 
 urlpatterns = [
-	path('', PostIndex.as_view(), name='post'),
-	path('<slug>/', PostDetail.as_view(), name='post-detail')
+    path("", views.blog_index, name="blog_index"),
+    path("<int:pk>/", views.blog_detail, name="blog_detail"),
+    path("<category>/", views.blog_category, name="blog_category"),
 ]

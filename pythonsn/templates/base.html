@@ -1,24 +1,15 @@
 <!--  head -->
 {% include 'partials/_head.html' %}
 <!-- Navigation -->
-
 {% block navbar %}
 {% include 'partials/_navbar.html' %}
 {% endblock %}
-<!--  Header showcase -->
-{% block header %}
-{% include 'partials/_header.html' %}
-{% endblock %}
-
 <!--  content section -->
 <div class="container-fluid">
-
   {% block content %}
   {% include 'partials/content.html' %}
   {% endblock  %}
-
 </div>
-
 
 <!-- footer js files -->
 {% include 'partials/_footer_js.html' %}

@@ -5,11 +5,13 @@
 {% include 'partials/_navbar.html' %}
 {% endblock %}
 <!--  content section -->
-<div class="container-fluid">
-  {% block content %}
-  {% include 'partials/content.html' %}
-  {% endblock  %}
-</div>
 
+{% block content %}
+{% include 'partials/content.html' %}
+{% endblock  %}
+<!-- showcase -->
+{% include 'partials/_showcase.html' %}
+<!-- footer -->
+{% include 'partials/_footer.html' %}
 <!-- footer js files -->
 {% include 'partials/_footer_js.html' %}

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     const date = new Date();
-    document.querySelector('.year').innerHTML = date.getFullYear();
+    $('.year').text = date.getFullYear();
 
 })
 $(window).on('load', function () { // makes sure the whole site is loaded 

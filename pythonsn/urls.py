@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),
-    path('admin/', admin.site.urls),
+    path('snpy-xamxam/', admin.site.urls),
     path('', include("pages.urls")),
     path('blog/', include("blog.urls")),
     path('resources/', include("resources.urls")),

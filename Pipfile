@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+Django = "==2.1"
+django-jet = "==1.0.8"
+django-markdownx = "==2.0.28"
+Markdown = "==3.1"
+pep8 = "==1.7.1"
+Pillow = "==6.0.0"
+pytz = "==2019.1"
+psycopg2-binary = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
